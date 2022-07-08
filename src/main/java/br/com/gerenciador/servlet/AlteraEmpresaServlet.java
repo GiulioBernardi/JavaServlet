@@ -16,10 +16,12 @@ public class AlteraEmpresaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-System.out.println("Cadastrando nova empresa");
+		System.out.println("Cadastrando nova empresa");
 		
 		String nomeEmpresa = request.getParameter("nome");
 		String dataEmpresa = request.getParameter("data");
+		String paramId = request.getParameter("id");
+		Integer id = Integer.valueOf(paramId);
 		
 		Date dataAbertura = null;
 		try {
@@ -28,6 +30,9 @@ System.out.println("Cadastrando nova empresa");
 		} catch (ParseException e) {
 			throw new ServletException(e);
 		}
+		
+		
+		
 	}
 
 }

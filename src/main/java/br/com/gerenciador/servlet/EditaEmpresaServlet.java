@@ -18,6 +18,8 @@ public class EditaEmpresaServlet extends HttpServlet {
 		Banco banco = new Banco();
 		
 		Empresa empresa = banco.buscaPorId(id);
+		
+		System.out.println(empresa.getNome());
 	}
 
 }

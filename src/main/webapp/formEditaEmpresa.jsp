@@ -9,8 +9,8 @@
 </head>
 <body>
 	<form action="${ linkServletNovaEmpresa }" method="post">
-		Nome: <input type="text" name="nome"/>
-		Data de Abertura: <input type="text" name="data"/>
+		Nome: <input type="text" name="nome" value="${ empresa.nome }"/>
+		Data de Abertura: <input type="text" name="data" value="${ empresa.dataAbertura }"/>
 		<input type="submit"/>
 	</form>
 </body>

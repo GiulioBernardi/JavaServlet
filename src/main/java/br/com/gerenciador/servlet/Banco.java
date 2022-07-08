@@ -1,6 +1,7 @@
 package br.com.gerenciador.servlet;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Banco {
@@ -31,13 +32,27 @@ public class Banco {
 		return Banco.empresas;
 	}
 	
+	
 	public void removeEmpresa(Integer id) {
-		for (Empresa empresa : empresas) {
+		
+		Iterator<Empresa> it = empresas.iterator();
+
+		while(it.hasNext()) {
+			Empresa empresa = it.next();
 			if(empresa.getId() == id) {
-				empresas.remove(empresa);
+				it.remove();
 			}
-			
-		}
+		}		
 	}
 
+	public Empresa buscaPorId(Integer id) {
+		for (Empresa empresa : empresas) {
+			if(empresa.getId() == id) {
+				return empresa;
+			}
+		}
+		return null;
+
+	
+	}
 }

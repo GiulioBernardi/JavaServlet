@@ -7,21 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/removeEmpresa")
-public class RemoveEmpresaServlet extends HttpServlet {
+@WebServlet("/editaEmpresa")
+public class EditaEmpresaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		String paramId = request.getParameter("id");
 		Integer id = Integer.valueOf(paramId);
 		
 		Banco banco = new Banco();
-		banco.removeEmpresa(id);
 		
-		response.sendRedirect("listaEmpresas");
-		
-	
+		Empresa empresa = banco.buscaPorId(id);
 	}
 
 }

@@ -31,6 +31,17 @@ public class AlteraEmpresaServlet extends HttpServlet {
 			throw new ServletException(e);
 		}
 		
+		Banco banco = new Banco();
+		
+		Empresa empresa = banco.buscaPorId(id);
+		
+		empresa.setNome(nomeEmpresa);
+		empresa.setDataAbertura(dataAbertura);
+		
+		
+		response.sendRedirect("listaEmpresas");
+		
+		
 		
 		
 	}
